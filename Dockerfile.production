@@ -1,3 +1,4 @@
+
 FROM node:18.15.0-alpine
 
 WORKDIR /app
@@ -14,7 +15,7 @@ COPY .env build/.env
 
 WORKDIR /app/build
 
-RUN ci --production
+RUN npm ci --production
 
 CMD ["node", "server.js"]
 
